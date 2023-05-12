@@ -11,3 +11,4 @@ export type Character = {
     url: string,
     create: string
 }
+

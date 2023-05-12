@@ -5,5 +5,5 @@ export type Episode = {
     episode:string,
     characters:string[],
     url: string,
-    create: string
+    created: string
 }
