@@ -1,15 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css" integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH" crossorigin="anonymous">
-    <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css"
+      integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH"
+      crossorigin="anonymous"
+    />
+    <title>Rick and Morty</title>
     <script src="/dist/index.js" type="module" defer></script>
-</head>
-<body>
-    <h1>Hola</h1>
-    <button class="btn btn-success">Probando</button>
-</body>
+    JavaScript Bundle with Popper
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+      defer
+    ></script>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-primary w-100 m-auto rounded-sm d-flex justify-content-between"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand logoImgAnchor" href="#"
+          ><img src="/assets/img/logoImg.jpg" class="logoImg"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarColor01"
+          aria-controls="navbarColor01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse d-flex justify-content-end"
+          id="navbarColor01"
+        >
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" id="charactersMain" href="#"
+                >Characters
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="episodesSection" href="#">Episodes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="locationSection" href="#">Location</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <main class="d-flex w-100 justify-content-between mt-2">
+      <aside class="bg-danger aside-section">
+        <ul class="episodes">
+          <li class="py-3">Episode One</li>
+        </ul>
+      </aside>
+      <div class="container d-flex flex-wrap bg-info">
+
+        <div class="card card-css " style="width: 18rem">
+          <img
+            src="./assets/img/imgLogo.png"
+            class="card-img-top cardImgBody"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Name Character</h5>
+            <span class="card-text mb-5">Human</span> | <span>Alive</span>
+            <a href="#" class="btn btn-primary mt-3 d-block">Info Character</a>
+          </div>
+        </div>
+        <div class="card card-css" style="width: 18rem">
+          <img
+            src="./assets/img/imgLogo.png"
+            class="card-img-top cardImgBody"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Name Character</h5>
+            <span class="card-text mb-5">Human</span> | <span>Alive</span>
+            <a href="#" class="btn btn-primary mt-3 d-block">Info Character</a>
+          </div>
+        </div>
+        <div class="card card-css" style="width: 18rem">
+          <img
+            src="./assets/img/imgLogo.png"
+            class="card-img-top cardImgBody"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Name Character</h5>
+            <span class="card-text mb-5">Human</span> | <span>Alive</span>
+            <a href="#" class="btn btn-primary mt-3 d-block">Info Character</a>
+          </div>
+        </div>
+        <div class="card card-css" style="width: 18rem">
+          <img
+            src="./assets/img/imgLogo.png"
+            class="card-img-top cardImgBody"
+            alt="..."
+          />
+          <div class="card-body">
+            <h5 class="card-title">Name Character</h5>
+            <span class="card-text mb-5">Human</span> | <span>Alive</span>
+            <a href="#" class="btn btn-primary mt-3 d-block">Info Character</a>
+          </div>
+        </div>
+      </div>
+      <section class="character-info" id="characterInfo"></section>
+    </main>
+  </body>
 </html>

@@ -1,5 +1,13 @@
 export type Character = { 
+    id: number, 
     name: string, 
-    age?: number, 
-    powers: string[]
+    status: string, 
+    species: string,
+    type:string,
+    gender:string
+    origin:string
+    episode?:string,
+    characters:string[],
+    url: string,
+    create: string
 }

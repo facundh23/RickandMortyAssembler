@@ -1,0 +1,61 @@
+.logoImg{
+    width: 200px;
+    height: 57px;
+    border-radius: 20%;
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
+    -ms-border-radius: 20%;
+    -o-border-radius: 20%;
+}
+
+.card-css{
+    width:150px;
+    margin: 10px;
+}
+
+.cardImgBody{
+    width: 700px;
+    height: 200px;
+}
+
+.aside-section{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+.episodes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+width: 100%;
+}
+.episodes li{
+    font-size: 20px;
+    list-style: none;
+    transition:all .5s ease ;
+    -webkit-transition:all .5s ease ;
+    -moz-transition:all .5s ease ;
+    -ms-transition:all .5s ease ;
+    -o-transition:all .5s ease ;
+}
+.episodes li:hover{
+    cursor: pointer;
+    transition:all .5s ease ;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+.character-info{
+    display: none;
+    background-color: red;
+    width: 200px;
+    height: 100px;
+}
+
