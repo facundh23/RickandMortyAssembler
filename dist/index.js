@@ -36,19 +36,22 @@ let paginatorController = new IntersectionObserver((inbounds, paginatorControlle
     threshold: 1.0
 });
 const showListEpisodes = (page) => __awaiter(void 0, void 0, void 0, function* () {
-    const response = yield getEpisodesPagination(page);
-    listEpisodes === null || listEpisodes === void 0 ? void 0 : listEpisodes.appendChild(anchorItemSidebar);
-    response === null || response === void 0 ? void 0 : response.results.forEach((episodeLi) => {
-        const { episode } = episodeLi;
-        anchorItemSidebar = document.createElement("a");
-        anchorItemSidebar.className = "selectedEpisode nav-link";
+    if (page < 4) {
+        const response = yield getEpisodesPagination(page);
+        response === null || response === void 0 ? void 0 : response.results.forEach((episodeLi) => {
+            const { episode } = episodeLi;
+            anchorItemSidebar = document.createElement("a");
+            anchorItemSidebar.className = "selectedEpisode nav-link";
+            anchorItemSidebar.id = `${episode.id}`;
+            anchorItemSidebar.onclick = () => { console.log('click'); };
+            listEpisodes === null || listEpisodes === void 0 ? void 0 : listEpisodes.appendChild(anchorItemSidebar);
+            anchorItemSidebar.textContent = `Season ${episode.charAt(2)}-Episode: ${episode.substr(4, 5)}`;
+        });
         listEpisodes === null || listEpisodes === void 0 ? void 0 : listEpisodes.appendChild(anchorItemSidebar);
-        anchorItemSidebar.textContent = `Season ${episode.charAt(2)} - Episode: ${episode.substr(4, 5)}`;
-    });
-    listEpisodes === null || listEpisodes === void 0 ? void 0 : listEpisodes.appendChild(anchorItemSidebar);
-    const ListInView = document.querySelectorAll(".aside-section .episodes .selectedEpisode");
-    let lastEpisode = ListInView[ListInView.length - 1];
-    paginatorController.observe(lastEpisode);
+        const ListInView = document.querySelectorAll(".aside-section .episodes .selectedEpisode");
+        let lastEpisode = ListInView[ListInView.length - 1];
+        paginatorController.observe(lastEpisode);
+    }
 });
-window.onload = showListEpisodes;
+showListEpisodes(page);
 //# sourceMappingURL=index.js.map

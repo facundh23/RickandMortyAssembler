@@ -34,16 +34,23 @@ const getEpisodes = async() => {
     }
 }
 const getEpisodesPagination = async(page:number) => {
-    try {
-        const response = await fetch(`https://rickandmortyapi.com/api/episode?page=${page}`);
-        if(response.status === 200){
-            const page = await response.json();
-            return page
+    
+    
+        try {
+                const response = await fetch(`https://rickandmortyapi.com/api/episode?page=${page}`);
+                if(response.status === 200){
+                    const page = await response.json();
+                    return page
+                }
+            
+            
+        } catch (error) {
+            console.log(error);
         }
-    } catch (error) {
-        console.log(error);
-    }
-}
+    
+    }  
+
+
 
 const getCharacter = async(id:number) => {
     try {

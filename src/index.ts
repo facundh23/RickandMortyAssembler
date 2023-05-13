@@ -32,34 +32,48 @@ anchorItemSidebar.className = "selectedEpisode nav-link"
 let paginatorController = new IntersectionObserver(( inbounds, paginatorController ) => {
       //* Si el ultimo elemento esta en pantalla ejecuto el codigo
     inbounds.forEach(inbound => {
-            if(inbound.isIntersecting){
-                page++
-                showListEpisodes(page)
-            } 
+                if(inbound.isIntersecting){
+                    page++
+                    showListEpisodes(page)
+                }
         })
     }, {
         rootMargin:'0px 0px 0px 0px',
         threshold:1.0
     });
-const showListEpisodes = async(page:any) => {
-    const response = await getEpisodesPagination(page)
+
+
+const showListEpisodes = async(page) => {
+ 
         
-        listEpisodes?.appendChild(anchorItemSidebar);
+if(page < 4){
 
-        response?.results.forEach((episodeLi: string) => {
-                    const { episode } = episodeLi
-                    anchorItemSidebar = document.createElement("a");
-                    anchorItemSidebar.className = "selectedEpisode nav-link"
-                    listEpisodes?.appendChild(anchorItemSidebar);
-                    anchorItemSidebar.textContent = `Season ${episode.charAt(2)} - Episode: ${episode.substr(4,5)}`;
-
-                })
+    const response = await getEpisodesPagination(page)
+    response?.results.forEach((episodeLi: string) => {
+                const { episode } = episodeLi
+                anchorItemSidebar = document.createElement("a");
+                anchorItemSidebar.className = "selectedEpisode nav-link"
+                anchorItemSidebar.id = `${episode.id}`;
+                anchorItemSidebar.onclick = () => {console.log('click');}
                 listEpisodes?.appendChild(anchorItemSidebar);
+                anchorItemSidebar.textContent = `Season ${episode.charAt(2)}-Episode: ${episode.substr(4,5)}`;
+    
+            })
+            listEpisodes?.appendChild(anchorItemSidebar);
+    
+         
+            //* Acceder al ultimo elemento en la lista
+            const ListInView = document.querySelectorAll(".aside-section .episodes .selectedEpisode");
+            let lastEpisode = ListInView[ListInView.length - 1 ]
+            paginatorController.observe(lastEpisode)
+}
+    
 
-                //* Acceder al ultimo elemento en la lista
-                const ListInView = document.querySelectorAll(".aside-section .episodes .selectedEpisode");
-                let lastEpisode = ListInView[ListInView.length - 1 ]
-                paginatorController.observe(lastEpisode)
+    
+    // listEpisodes?.appendChild(anchorItemSidebar);
+
+
+    
 }
 
-window.onload = showListEpisodes
+showListEpisodes(page)
