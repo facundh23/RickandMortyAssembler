@@ -67,5 +67,11 @@ const getCharacter = (id) => __awaiter(void 0, void 0, void 0, function* () {
         console.log(error);
     }
 });
-export { getLocation, getCharacters, getEpisodes, getCharacter, getEpisodesPagination };
+const getId = (e) => {
+    if (e.target.classList.contains("selectedEpisode")) {
+        const episodeId = parseInt(e.target.id);
+        return episodeId;
+    }
+};
+export { getLocation, getCharacters, getEpisodes, getCharacter, getEpisodesPagination, getId };
 //# sourceMappingURL=Functions.js.map

@@ -64,10 +64,19 @@ const getCharacter = async(id:number) => {
     }
 }
 
+const getId = (e:any) =>{
+    if(e.target.classList.contains("selectedEpisode")){
+        const episodeId = parseInt(e.target.id)
+        return episodeId
+    }
+//  console.log(e.target.classList);
+}
+
 export {
     getLocation,
     getCharacters,
     getEpisodes,
     getCharacter,
-    getEpisodesPagination
+    getEpisodesPagination,
+    getId
 }
