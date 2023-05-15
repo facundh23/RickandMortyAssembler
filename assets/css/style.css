@@ -9,7 +9,7 @@
 }
 
 .card-css{
-    width:150px;
+    width:20rem;
     margin: 10px;
 }
 
@@ -64,5 +64,24 @@ li::marker{
     background-color: red;
     width: 200px;
     height: 100px;
+}
+
+.title_container{
+    display: block;
+    width: 100%;
+}
+
+#content .title_container{
+    padding: 20px;
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.show{
+    display: flex;
+}
+.no-show{
+    display: flex;
 }
 
