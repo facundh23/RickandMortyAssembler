@@ -1,3 +1,4 @@
+
 .logoImg{
     width: 100px;
     height: 100px;
@@ -16,9 +17,13 @@
 }
 
 .cardImg{
-    width: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2px;
+    width: 38%;
     height: 150px;
-    padding: 10px;
+    
 }
 
 .aside-section{
@@ -63,13 +68,6 @@ li::marker{
     text-decoration: none;
 }
 
-.character-info{
-    display: none;
-    background-color: red;
-    width: 200px;
-    height: 100px;
-}
-
 .title_container{
     display: block;
     width: 100%;
@@ -97,7 +95,7 @@ li::marker{
 .containerInfoEpisode{
     border: 1px solid black;
     width: 150px;
-    height: 100px;
+    height: 80px;
     text-align: center;
     margin: 50px;
     vertical-align: middle;

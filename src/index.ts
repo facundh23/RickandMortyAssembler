@@ -1,4 +1,5 @@
 import { Episode } from './Types/Episodes';
+
 import {  getEpisodesPagination,  getDataEpisode } from './Types/Functions.js';
 
 window.onload = () => {showListEpisodes(page)}
