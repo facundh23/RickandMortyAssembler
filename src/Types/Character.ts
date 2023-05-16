@@ -10,6 +10,7 @@ export type Character = {
     episode?:string,
     characters?:string[],
     url?: string,
-    create?: string
+    create?: string,
+    image?:string
 }
 
