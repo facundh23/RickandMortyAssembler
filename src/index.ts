@@ -1,6 +1,4 @@
-import { Character} from './Types/Character';
 import { Episode } from './Types/Episodes';
-import { Location } from './Types/Location';
 import {  getEpisodesPagination,  getDataEpisode } from './Types/Functions.js';
 
 window.onload = () => {showListEpisodes(page)}
@@ -10,11 +8,7 @@ window.onload = () => {showListEpisodes(page)}
 const listEpisodes = document.querySelector("#episodesList");
 const sectionInfo = document.querySelector("#sectionInfo");
 
-
-
-
 let page = 1;
-let characterPages = 1;
 let btnListEpisodes = document.createElement("a");
 btnListEpisodes.className = "selectedEpisode nav-link";
 let sectionLocation = document.createElement("section");

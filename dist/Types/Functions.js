@@ -93,7 +93,7 @@ const getCharacter = (url) => __awaiter(void 0, void 0, void 0, function* () {
             const btnLocation = document.createElement("button");
             btnLocation.className = "btn btn-warning mt-1 location",
                 btnLocation.textContent = "Info Location";
-            btnLocation.onclick = () => { characterView(`${characterInformation.id}`); };
+            btnLocation.onclick = () => { getDataLocation(id); };
             cardImage.appendChild(imagePhoto);
             cardImage.appendChild(cardBody);
             cardImage.appendChild(infoName);
@@ -131,10 +131,10 @@ const characterView = (id) => __awaiter(void 0, void 0, void 0, function* () {
         photo.className = "photoInfo";
         photo.src = `${characterInformation.image}`;
         const nameCharacter = document.createElement("p");
-        nameCharacter.className = "w-100";
+        nameCharacter.className = "w-100 fs-3";
         nameCharacter.textContent = `${characterInformation.name}`;
         const nameInfo = document.createElement("p");
-        nameInfo.className = "w-100";
+        nameInfo.className = "w-100 fs-2";
         nameInfo.textContent = `${characterInformation.species} | ${characterInformation.status} | ${characterInformation.gender} | ${characterInformation.location.name} `;
         episode.forEach((e) => {
             getEpisodes(e);
@@ -165,7 +165,7 @@ const getEpisodes = (url) => __awaiter(void 0, void 0, void 0, function* () {
             episodeNumber.className = "fw-bold w-100";
             episodeNumber.textContent = `Episode ${informationEpisode.id}`;
             const seasonNumber = document.createElement("p");
-            seasonNumber.className = "d-block";
+            seasonNumber.className = "fw-bolder";
             seasonNumber.textContent = `${informationEpisode.air_date}`;
             paragraphContainer.appendChild(episodeNumber);
             paragraphContainer.appendChild(seasonNumber);
@@ -181,22 +181,66 @@ const getDataLocation = (id) => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield fetch(`${BASE_URL_LOCATION}/${id}`);
         if (response.status === 200) {
             const locatioN = yield response.json();
-            console.log(locatioN);
-            return locatioN;
+            const { id, name, type, dimension, residents, url, created } = locatioN;
+            let locationInfo = {
+                id: id,
+                name: name,
+                type: type,
+                dimension: dimension,
+                residents: residents,
+                url: url,
+                created: created
+            };
+            container === null || container === void 0 ? void 0 : container.replaceChildren();
+            const titleLocation = document.createElement("h1");
+            titleLocation.textContent = `${locationInfo.name} | (${locationInfo.dimension})`;
+            const informationLocation = document.createElement("p");
+            informationLocation.className = "text-content w-100";
+            informationLocation.textContent = `Planet | ${locationInfo.dimension}`;
+            container === null || container === void 0 ? void 0 : container.appendChild(titleLocation);
+            container === null || container === void 0 ? void 0 : container.appendChild(informationLocation);
+            residents.forEach((resident) => {
+                getResident(resident);
+            });
         }
     }
     catch (error) {
     }
 });
-const getEpisodeId = (e) => {
-    if (e.target.classList.contains("infoEpisode")) {
-        const episodeID = parseInt(e.target.id);
-        console.log(episodeID);
-        getDataEpisode(episodeID);
-        return episodeID;
+const getResident = (url) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const response = yield fetch(`${url}`);
+        const resident = yield response.json();
+        const { name, status, species, image, location } = resident;
+        let residentInformation = {
+            name: name,
+            status: status,
+            species: species,
+            image: image,
+            location: location
+        };
+        const cardImage = document.createElement("card");
+        cardImage.className = "card card-css cardImg";
+        const imagePhoto = document.createElement("img");
+        imagePhoto.className = "card-img-top";
+        imagePhoto.src = `${residentInformation.image}`;
+        const cardBody = document.createElement("div");
+        cardBody.className = "card-body";
+        const infoName = document.createElement("p");
+        infoName.className = "card-text";
+        infoName.textContent = `${residentInformation.name} `;
+        const infoParagraph = document.createElement("p");
+        infoParagraph.className = "card-text";
+        infoParagraph.textContent = `${residentInformation.status} | ${residentInformation.species}`;
+        cardImage.appendChild(cardBody);
+        cardImage.appendChild(imagePhoto);
+        cardImage.appendChild(infoName);
+        cardImage.appendChild(infoParagraph);
+        container === null || container === void 0 ? void 0 : container.appendChild(cardImage);
     }
-    ;
-};
+    catch (error) {
+    }
+});
 const getLocationId = (e) => {
     if (e.target.classList.contains("location")) {
         const idCharacter = parseInt(e.target.id);
@@ -204,5 +248,5 @@ const getLocationId = (e) => {
     }
     ;
 };
-export { getDataEpisode, getEpisodesPagination, getEpisodeId, getLocationId, getEpisodes };
+export { getDataEpisode, getEpisodesPagination, getLocationId, getEpisodes };
 //# sourceMappingURL=Functions.js.map
