@@ -1,6 +1,6 @@
 body {
-    background: rgb(15,185,126);
-    background: radial-gradient(circle, rgba(15,185,126,1) 0%, rgba(148,233,152,1) 100%);
+    background: rgb(15,185,152);
+    background: linear-gradient(90deg, rgba(15,185,152,0.5495448179271709) 0%, rgba(148,233,218,1) 100%);
 }
 .logoImg{
     width:5rem;
