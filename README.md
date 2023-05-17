@@ -2,7 +2,7 @@
 
 This is the second indivual project that we had to develop in the Module Fundamental Two in Assembler Institute of Technology.:zap:
 
-## We develop this project with the following technologies. :open_file_folder:
+## We developed the project using the following technologies. :open_file_folder:
 
 :arrow_right: HTML :rocket:
 :arrow_right: CSS :art:
