@@ -24,7 +24,5 @@ This is the second indivual project that we had to develop in the Module Fundame
 ![location view](https://github.com/facundh/RickandMortyAssembler/assets/90207514/e38ecfb3-e92a-4612-a998-98c2089da80f)
 
  ### Code
- ![Captura de pantalla 2023-05-17 122234](https://github.com/facundh/RickandMortyAssembler/assets/90207514/e232a344-6be9-427e-86e1-5c37b8415b61)
-![utils](https://github.com/facundh/RickandMortyAssembler/assets/90207514/bd44e435-384c-436c-bd88-85c4cfdf30e8)
-![Captura de pantalla 2023-05-17 122259](https://github.com/facundh/RickandMortyAssembler/assets/90207514/5825ab23-0d96-45f3-b98b-14d358735d96)
-![indexHTML](https://github.com/facundh/RickandMortyAssembler/assets/90207514/7d99255c-8826-4121-8afd-95d7602be35d)
+![indexHTML](https://github.com/facundh/RickandMortyAssembler/assets/90207514/a08ee507-a0e4-4f7d-8fdb-7644406282e3)
+![utils](https://github.com/facundh/RickandMortyAssembler/assets/90207514/ec98dfe7-46c2-40cb-ac7b-35b79b6316c5)
