@@ -2,7 +2,7 @@
 
 This is the second indivual project that we had to develop in the Module Fundamental Two in Assembler Institute of Technology.:zap:
 
-## In this project we had to use the following technologies. 😄
+## In this project we had to use the following technologies. :open_file_folder:
 
 :arrow_right: HTML :rocket:
 :arrow_right: CSS :art:
@@ -26,3 +26,6 @@ This is the second indivual project that we had to develop in the Module Fundame
  ### Code
 ![indexHTML](https://github.com/facundh/RickandMortyAssembler/assets/90207514/a08ee507-a0e4-4f7d-8fdb-7644406282e3)
 ![utils](https://github.com/facundh/RickandMortyAssembler/assets/90207514/ec98dfe7-46c2-40cb-ac7b-35b79b6316c5)
+
+Author :black_nib:
+Facundo Herrera
