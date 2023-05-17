@@ -8,7 +8,7 @@ const BASE_URL_EPISODE = "https://rickandmortyapi.com/api/episode";
 
 const container = document.querySelector("#content");
 const cleanScreen = document.querySelector("#cleanData");
-const sideBarView = document.querySelector("#episodesList");
+
 
 cleanScreen?.addEventListener("click", () => {
     container?.replaceChildren();
@@ -115,22 +115,21 @@ const characterView = async (id:string):Promise<void> => {
     try {
         const response = await  fetch(`${BASE_URL_CHARACTER}/${idCharacter}`);
         const data = await response.json();
-        const {name, status, species, episode,location,image, id, type,gender,create, origin, url } = data
+        const {name, status, species, episode, location,image, id, type ,gender ,create , origin, url } = data
         let characterInformation: Character = {
             name:name,
             status: status,
-            species:species, 
+            species:species,
             episode:episode,
             location:location,
             image:image,
             id:id,
             gender:gender,
-            url:url, 
+            url:url,
             create:create,
-            type:type, 
+            type:type,
             origin:origin.name
         }
-        
         container?.replaceChildren()
         const photo = document.createElement("img");
         photo.className = "photoInfo";

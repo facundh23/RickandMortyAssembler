@@ -12,7 +12,6 @@ const BASE_URL_LOCATION = "https://rickandmortyapi.com/api/location";
 const BASE_URL_EPISODE = "https://rickandmortyapi.com/api/episode";
 const container = document.querySelector("#content");
 const cleanScreen = document.querySelector("#cleanData");
-const sideBarView = document.querySelector("#episodesList");
 cleanScreen === null || cleanScreen === void 0 ? void 0 : cleanScreen.addEventListener("click", () => {
     container === null || container === void 0 ? void 0 : container.replaceChildren();
 });
