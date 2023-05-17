@@ -1,6 +1,6 @@
 # Second Individual Project Assembler :computer:
 
-##This is the second indivual project that we had to develop in the Fundamental Two Module at Assembler Institute of Technology.:zap:
+## This is the second indivual project that we had to develop in the Fundamental Two Module at Assembler Institute of Technology.:zap:
 
 ### We developed the project using the following technologies. :open_file_folder:
 
