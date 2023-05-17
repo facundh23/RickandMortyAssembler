@@ -9,6 +9,7 @@ window.onload = () => {showListEpisodes(page)}
 const listEpisodes = document.querySelector("#episodesList");
 const sectionInfo = document.querySelector("#sectionInfo");
 
+
 let page = 1;
 let btnListEpisodes = document.createElement("a");
 btnListEpisodes.className = "selectedEpisode nav-link";

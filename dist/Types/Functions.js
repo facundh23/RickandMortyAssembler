@@ -38,10 +38,10 @@ const getDataEpisode = (id) => __awaiter(void 0, void 0, void 0, function* () {
             };
             container === null || container === void 0 ? void 0 : container.replaceChildren();
             const firstTitle = document.createElement("h2");
-            firstTitle.className = "title-episode w-100";
+            firstTitle.className = "title-episode text-center w-100";
             firstTitle.textContent = `Episode: ${informationEpisode.id}`;
             const secondRow = document.createElement("p");
-            secondRow.className = "date-info w-100";
+            secondRow.className = "date-info text-center w-100";
             secondRow.textContent = `${informationEpisode.air_date} | ${informationEpisode.episode}`;
             container === null || container === void 0 ? void 0 : container.appendChild(firstTitle);
             container === null || container === void 0 ? void 0 : container.appendChild(secondRow);
@@ -92,7 +92,7 @@ const getCharacter = (url) => __awaiter(void 0, void 0, void 0, function* () {
             btnInfo.addEventListener("click", () => { characterView(`${characterInformation.id}`); });
             const btnLocation = document.createElement("button");
             btnLocation.className = "btn btn-warning w-100 mt-1  location",
-                btnLocation.textContent = ` Location: ${characterInformation.location.name}`;
+                btnLocation.textContent = "Location Info";
             btnLocation.addEventListener("click", () => { getDataLocation(id); });
             cardImage.appendChild(imagePhoto);
             cardImage.appendChild(cardBody);
@@ -125,7 +125,7 @@ const characterView = (id) => __awaiter(void 0, void 0, void 0, function* () {
             url: url,
             create: create,
             type: type,
-            origin: origin
+            origin: origin.name
         };
         container === null || container === void 0 ? void 0 : container.replaceChildren();
         const photo = document.createElement("img");
@@ -136,7 +136,7 @@ const characterView = (id) => __awaiter(void 0, void 0, void 0, function* () {
         nameCharacter.textContent = `${characterInformation.name}`;
         const nameInfo = document.createElement("p");
         nameInfo.className = "w-100 fs-2";
-        nameInfo.textContent = `${characterInformation.species} | ${characterInformation.status} | ${characterInformation.gender} | ${characterInformation.origin.name} `;
+        nameInfo.textContent = `${characterInformation.species} | ${characterInformation.status} | ${characterInformation === null || characterInformation === void 0 ? void 0 : characterInformation.gender} | ${characterInformation === null || characterInformation === void 0 ? void 0 : characterInformation.origin} `;
         episode.forEach((e) => {
             getEpisodes(e);
         });
@@ -161,13 +161,11 @@ const getEpisodes = (url) => __awaiter(void 0, void 0, void 0, function* () {
                 name: name
             };
             const paragraphContainer = document.createElement("div");
-            paragraphContainer.className = "containerInfoEpisode w-100";
+            paragraphContainer.className = "containerInfoEpisode w-25";
             paragraphContainer.addEventListener("click", () => getDataEpisode(id));
             const episodeNumber = document.createElement("p");
-            episodeNumber.className = "fw-bold w-100";
             episodeNumber.textContent = `Episode ${informationEpisode.id}`;
             const seasonNumber = document.createElement("p");
-            seasonNumber.className = "fw-bolder";
             seasonNumber.textContent = `${informationEpisode.episode}`;
             paragraphContainer.appendChild(episodeNumber);
             paragraphContainer.appendChild(seasonNumber);
@@ -195,10 +193,11 @@ const getDataLocation = (id) => __awaiter(void 0, void 0, void 0, function* () {
             };
             container === null || container === void 0 ? void 0 : container.replaceChildren();
             const titleLocation = document.createElement("h1");
+            titleLocation.className = "btn_data_location";
             titleLocation.addEventListener("click", () => { characterView(id); });
             titleLocation.textContent = `${locationInfo.name} | (${locationInfo.dimension})`;
             const informationLocation = document.createElement("p");
-            informationLocation.className = "text-content w-100";
+            informationLocation.className = "text-center w-100";
             informationLocation.textContent = `Planet | ${locationInfo.dimension}`;
             container === null || container === void 0 ? void 0 : container.appendChild(titleLocation);
             container === null || container === void 0 ? void 0 : container.appendChild(informationLocation);
@@ -226,8 +225,8 @@ const getResident = (url) => __awaiter(void 0, void 0, void 0, function* () {
         };
         const cardImage = document.createElement("card");
         cardImage.className = "card card-css cardImg";
+        cardImage.addEventListener("click", () => { getDataLocation(id); });
         const imagePhoto = document.createElement("img");
-        imagePhoto.addEventListener("click", () => { getDataLocation(id); });
         imagePhoto.className = "card-img-top";
         imagePhoto.src = `${residentInformation.image}`;
         const cardBody = document.createElement("div");
@@ -247,6 +246,10 @@ const getResident = (url) => __awaiter(void 0, void 0, void 0, function* () {
     catch (error) {
         console.log(error);
     }
+});
+const cleanScreen = document.querySelector("#cleanData");
+cleanScreen === null || cleanScreen === void 0 ? void 0 : cleanScreen.addEventListener("click", () => {
+    container === null || container === void 0 ? void 0 : container.replaceChildren();
 });
 export { getDataEpisode, getEpisodesPagination, };
 //# sourceMappingURL=Functions.js.map

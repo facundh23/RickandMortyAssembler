@@ -6,7 +6,7 @@ export type Character = {
     location: string
     type?:string,
     gender?:string
-    origin?:string
+    origin?:object
     episode?:string,
     characters?:string[],
     url?: string,

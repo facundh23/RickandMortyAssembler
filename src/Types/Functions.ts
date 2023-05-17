@@ -7,6 +7,7 @@ const BASE_URL_LOCATION = "https://rickandmortyapi.com/api/location";
 const BASE_URL_EPISODE = "https://rickandmortyapi.com/api/episode";
 
 const container = document.querySelector("#content");
+
 const getEpisodesPagination = async(page:number) => {
 
         try {
@@ -19,7 +20,7 @@ const getEpisodesPagination = async(page:number) => {
             console.log(error);
         }
     }
-const getDataEpisode = async(id:number) => {
+const getDataEpisode = async(id:number):Promise<void>  => {
     try {
         const response = await fetch(`${BASE_URL_EPISODE}/${id}`);
         if(response.status === 200){
@@ -34,10 +35,10 @@ const getDataEpisode = async(id:number) => {
             }
             container?.replaceChildren()
             const firstTitle = document.createElement("h2");
-            firstTitle.className = "title-episode w-100";
+            firstTitle.className = "title-episode text-center w-100";
             firstTitle.textContent = `Episode: ${informationEpisode.id}`;
             const secondRow = document.createElement("p");
-            secondRow.className =  "date-info w-100";
+            secondRow.className =  "date-info text-center w-100";
             secondRow.textContent = `${informationEpisode.air_date} | ${informationEpisode.episode}`
             container?.appendChild(firstTitle)
             container?.appendChild(secondRow)
@@ -70,7 +71,6 @@ const getCharacter = async( url:string):Promise<void>  => {
                 }
                 const cardImage = document.createElement("card");
                 cardImage.className ="card card-css cardImg";
-                // cardImage.addEventListener("click", ()=> {characterView(`${characterInformation.id}`)})
                 const imagePhoto = document.createElement("img");
                 imagePhoto.className = "card-img-top";
                 imagePhoto.src = `${characterInformation.image}`
@@ -88,7 +88,7 @@ const getCharacter = async( url:string):Promise<void>  => {
                 btnInfo.addEventListener("click", ()=> {characterView(`${characterInformation.id}`)})
                 const btnLocation = document.createElement("button");
                 btnLocation.className ="btn btn-warning w-100 mt-1  location",
-                btnLocation.textContent = ` Location: ${characterInformation.location.name}`;
+                btnLocation.textContent = "Location Info";
                 btnLocation.addEventListener("click", () => {getDataLocation(id)})
                 cardImage.appendChild(imagePhoto);
                 cardImage.appendChild(cardBody);
@@ -120,8 +120,9 @@ const characterView = async (id:string):Promise<void> => {
             url:url, 
             create:create,
             type:type, 
-            origin:origin
+            origin:origin.name
         }
+        
         container?.replaceChildren()
         const photo = document.createElement("img");
         photo.className = "photoInfo";
@@ -131,7 +132,7 @@ const characterView = async (id:string):Promise<void> => {
         nameCharacter.textContent= `${characterInformation.name}`
         const nameInfo = document.createElement("p");
         nameInfo.className = "w-100 fs-2"
-        nameInfo.textContent = `${characterInformation.species} | ${characterInformation.status} | ${characterInformation.gender} | ${characterInformation.origin.name} `;
+        nameInfo.textContent = `${characterInformation.species} | ${characterInformation.status} | ${characterInformation?.gender} | ${characterInformation?.origin} `;
         episode.forEach((e:string )=> {
             getEpisodes(e)
         })
@@ -154,15 +155,12 @@ const getEpisodes = async(url:string):Promise<void> => {
                 characters: characters,
                 name: name
             }
-            
             const paragraphContainer = document.createElement("div");
-            paragraphContainer.className = "containerInfoEpisode w-100";
+            paragraphContainer.className = "containerInfoEpisode w-25";
             paragraphContainer.addEventListener("click", () => getDataEpisode(id))
             const episodeNumber = document.createElement("p");
-            episodeNumber.className ="fw-bold w-100";
             episodeNumber.textContent = `Episode ${informationEpisode.id}`;
             const seasonNumber = document.createElement("p");
-            seasonNumber.className ="fw-bolder"
             seasonNumber.textContent= `${informationEpisode.episode}`
             paragraphContainer.appendChild(episodeNumber);
             paragraphContainer.appendChild(seasonNumber);
@@ -181,19 +179,20 @@ const getDataLocation = async( id:number):Promise<void> => {
                 const { id, name, type, dimension, residents, url, created } = locatioN;
                 let locationInfo:Location = {
                     id: id,
-                    name:name, 
+                    name:name,
                     type:type,
-                    dimension:dimension, 
-                    residents:residents, 
-                    url:url, 
+                    dimension:dimension,
+                    residents:residents,
+                    url:url,
                     created: created
                 }
                 container?.replaceChildren()
                 const titleLocation = document.createElement("h1");
+                titleLocation.className = "btn_data_location"
                 titleLocation.addEventListener("click", () => {characterView(id)})
                 titleLocation.textContent = `${locationInfo.name} | (${locationInfo.dimension})`;
                 const informationLocation = document.createElement("p");
-                informationLocation.className = "text-content w-100";
+                informationLocation.className = "text-center w-100";
                 informationLocation.textContent = `Planet | ${locationInfo.dimension}`
                 container?.appendChild(titleLocation);
                 container?.appendChild(informationLocation);
@@ -222,8 +221,8 @@ const getResident = async(url:string):Promise<void> => {
         
         const cardImage = document.createElement("card");
         cardImage.className ="card card-css cardImg";
+        cardImage.addEventListener("click", () => {getDataLocation(id)})
         const imagePhoto = document.createElement("img");
-        imagePhoto.addEventListener("click", () => {getDataLocation(id)})
         imagePhoto.className = "card-img-top";
         imagePhoto.src = `${residentInformation.image}`
         const cardBody = document.createElement("div");
@@ -243,6 +242,11 @@ const getResident = async(url:string):Promise<void> => {
         console.log(error);
     }
 }
+
+const cleanScreen = document.querySelector("#cleanData");
+cleanScreen?.addEventListener("click", () => {
+    container?.replaceChildren();
+})
 
 export {
         getDataEpisode,
