@@ -1,3 +1,24 @@
+# Second Individual Project Assembler :computer:
+
+This is the second indivual project that we had to develop in the Module Fundamental Two in Assembler Institute of Technology.
+
+## In this project we had to use the following technologies. 😄
+
+🔨 HTML 
+🔨 CSS :art:
+🔨 BOOTSTRAP 
+🔨 JAVASCRIPT 
+🔨 TYPESCRIPT 
+
+## We used the rick and morty API to get the information we needed for our project.
+
+:arrow_right: https://rickandmortyapi.com/ 💾
+
+## Here we have some Images about the Project 📷
+
+
+
+### Web
 ![pagina inicio rick and morty](https://github.com/facundh/RickandMortyAssembler/assets/90207514/27e1b592-c595-481c-a847-0da51620bd19)
 ![Character View](https://github.com/facundh/RickandMortyAssembler/assets/90207514/11a51a7c-aa83-49b7-8fee-19c35b1b5275)
 ![Episode view](https://github.com/facundh/RickandMortyAssembler/assets/90207514/9d579b6f-882e-4d09-ba79-f69d7bb2fa10)
