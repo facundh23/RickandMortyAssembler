@@ -5,7 +5,7 @@ This is the second indivual project that we had to develop in the Module Fundame
 
 ## In this project we had to use the following technologies.
 
-:arrow_right: HTML :pencil2:
+:arrow_right HTML :pencil2
 :arrow_right: CSS :art:
 :arrow_right:BOOTSTRAP :art:
 :arrow_right: JAVASCRIPT :hammer:
