@@ -11,6 +11,10 @@ const BASE_URL_CHARACTER = "https://rickandmortyapi.com/api/character";
 const BASE_URL_LOCATION = "https://rickandmortyapi.com/api/location";
 const BASE_URL_EPISODE = "https://rickandmortyapi.com/api/episode";
 const container = document.querySelector("#content");
+const cleanScreen = document.querySelector("#cleanData");
+cleanScreen === null || cleanScreen === void 0 ? void 0 : cleanScreen.addEventListener("click", () => {
+    container === null || container === void 0 ? void 0 : container.replaceChildren();
+});
 const getEpisodesPagination = (page) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const response = yield fetch(`https://rickandmortyapi.com/api/episode?page=${page}`);
@@ -87,12 +91,12 @@ const getCharacter = (url) => __awaiter(void 0, void 0, void 0, function* () {
             infoParagraph.className = "card-text";
             infoParagraph.textContent = `${characterInformation.status} | ${characterInformation.species}`;
             const btnInfo = document.createElement("button");
-            btnInfo.className = "btn btn-info mt-1 w-100  location",
+            btnInfo.className = "btn btn-primary mt-1 w-100  location",
                 btnInfo.textContent = `${characterInformation.name} Info`;
             btnInfo.addEventListener("click", () => { characterView(`${characterInformation.id}`); });
             const btnLocation = document.createElement("button");
-            btnLocation.className = "btn btn-warning w-100 mt-1  location",
-                btnLocation.textContent = "Location Info";
+            btnLocation.className = "btn btn-info w-100 mt",
+                btnLocation.textContent = "Location Info2";
             btnLocation.addEventListener("click", () => { getDataLocation(id); });
             cardImage.appendChild(imagePhoto);
             cardImage.appendChild(cardBody);
@@ -132,10 +136,10 @@ const characterView = (id) => __awaiter(void 0, void 0, void 0, function* () {
         photo.className = "photoInfo";
         photo.src = `${characterInformation.image}`;
         const nameCharacter = document.createElement("p");
-        nameCharacter.className = "w-100 fs-3";
+        nameCharacter.className = "w-100 text-center fs-3";
         nameCharacter.textContent = `${characterInformation.name}`;
         const nameInfo = document.createElement("p");
-        nameInfo.className = "w-100 fs-2";
+        nameInfo.className = "w-100 text-center fs-2";
         nameInfo.textContent = `${characterInformation.species} | ${characterInformation.status} | ${characterInformation === null || characterInformation === void 0 ? void 0 : characterInformation.gender} | ${characterInformation === null || characterInformation === void 0 ? void 0 : characterInformation.origin} `;
         episode.forEach((e) => {
             getEpisodes(e);
@@ -225,7 +229,7 @@ const getResident = (url) => __awaiter(void 0, void 0, void 0, function* () {
         };
         const cardImage = document.createElement("card");
         cardImage.className = "card card-css cardImg";
-        cardImage.addEventListener("click", () => { getDataLocation(id); });
+        cardImage.addEventListener("click", () => { characterView(id); });
         const imagePhoto = document.createElement("img");
         imagePhoto.className = "card-img-top";
         imagePhoto.src = `${residentInformation.image}`;
@@ -246,10 +250,6 @@ const getResident = (url) => __awaiter(void 0, void 0, void 0, function* () {
     catch (error) {
         console.log(error);
     }
-});
-const cleanScreen = document.querySelector("#cleanData");
-cleanScreen === null || cleanScreen === void 0 ? void 0 : cleanScreen.addEventListener("click", () => {
-    container === null || container === void 0 ? void 0 : container.replaceChildren();
 });
 export { getDataEpisode, getEpisodesPagination, };
 //# sourceMappingURL=Functions.js.map

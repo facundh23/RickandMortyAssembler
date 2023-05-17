@@ -51,7 +51,7 @@ const showListEpisodes = (page) => __awaiter(void 0, void 0, void 0, function* (
         });
         sectionInfo === null || sectionInfo === void 0 ? void 0 : sectionInfo.appendChild(titleContainer);
         listEpisodes === null || listEpisodes === void 0 ? void 0 : listEpisodes.appendChild(btnListEpisodes);
-        const ListInView = document.querySelectorAll(".aside-section .episodes .selectedEpisode");
+        const ListInView = document.querySelectorAll(".episodes .selectedEpisode");
         let lastEpisode = ListInView[ListInView.length - 1];
         paginatorController.observe(lastEpisode);
     }

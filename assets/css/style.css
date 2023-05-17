@@ -3,39 +3,34 @@ body {
     background: radial-gradient(circle, rgba(15,185,126,1) 0%, rgba(148,233,152,1) 100%);
 }
 .logoImg{
-    width: 100px;
-    height: 100px;
+    width:5rem;
+    height: 4rem;
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     -o-border-radius: 50%;
 }
+.logoImg:hover{
+    cursor: pointer;
+}
+
 .nav_section{
-    height: 100px;
+    height: 4rem;
 }
-.card-css{
-    width:20rem;
-    margin: 10px;
-}
+
 
 .cardImg{
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 2px;
-    width: 30%;
+    width: 13rem;
     height: 100px;
-    
+    padding: 5px;
+    margin: 5px;
 }
 
-.aside-section{
-    width: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-   
-}
 
 .photoInfo{
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -46,10 +41,8 @@ body {
 .episodes {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    
-
 }
 .episodes a{
     margin-left: 25px;
@@ -101,7 +94,8 @@ li::marker{
     font-size: 30px;
 }
 .selectedEpisode{
-    font-size: 30px;
+    width: 100%;
+    font-size: 25px;
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -172,30 +166,17 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         text-align: center;
     }
 
-    .aside-section a{
-        font-size: 8px;
-    }
-    .episodes {
-        font-size: 10px;
-        width: 20px;
-        
-    }
-    .episodes a:hover {
-        font-size: 15px;
-        
-    }
-    .selectedEpisode {
-        width: 80%;
-    }
     .episodes a{
         font-size: 10px;
         background: none;
     }
     .episodes a:hover{
-        font-size: 20px;
+        font-size: 15px;
         
     }
+    .selectedEpisode{
 
+    }
     .containerInfoEpisode {
         height: 70px;
     }

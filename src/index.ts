@@ -59,7 +59,7 @@ const showListEpisodes = async( page:number ) => {
                 listEpisodes?.appendChild(btnListEpisodes);
 
                 //* Acceder al ultimo elemento en la lista
-                const ListInView = document.querySelectorAll(".aside-section .episodes .selectedEpisode");
+                const ListInView = document.querySelectorAll(".episodes .selectedEpisode");
                 let lastEpisode = ListInView[ListInView.length - 1 ]
                 paginatorController.observe(lastEpisode)
             }
