@@ -17,7 +17,7 @@ cleanScreen?.addEventListener("click", () => {
 const getEpisodesPagination = async(page:number) => {
 
         try {
-                const response = await fetch(`https://rickandmortyapi.com/api/episode?page=${page}`);
+                const response = await fetch(`${BASE_URL_EPISODE}?page=${page}`);
                 if(response.status === 200){
                     const page = await response.json();
                     return page

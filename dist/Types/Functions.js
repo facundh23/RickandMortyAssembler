@@ -17,7 +17,7 @@ cleanScreen === null || cleanScreen === void 0 ? void 0 : cleanScreen.addEventLi
 });
 const getEpisodesPagination = (page) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const response = yield fetch(`https://rickandmortyapi.com/api/episode?page=${page}`);
+        const response = yield fetch(`${BASE_URL_EPISODE}?page=${page}`);
         if (response.status === 200) {
             const page = yield response.json();
             return page;
