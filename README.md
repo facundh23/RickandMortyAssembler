@@ -17,10 +17,12 @@ This is the second indivual project that we had to develop in the Module Fundame
 ## Here we have some Images about the Project 📷
 
 ### Web
-![pagina inicio rick and morty](https://github.com/facundh/RickandMortyAssembler/assets/90207514/27e1b592-c595-481c-a847-0da51620bd19)
-![Character View](https://github.com/facundh/RickandMortyAssembler/assets/90207514/11a51a7c-aa83-49b7-8fee-19c35b1b5275)
-![Episode view](https://github.com/facundh/RickandMortyAssembler/assets/90207514/9d579b6f-882e-4d09-ba79-f69d7bb2fa10)
-![Location View](https://github.com/facundh/RickandMortyAssembler/assets/90207514/955f471b-4ce6-44c6-87a8-aadf3aaf13f7)
+
+![Pagina Inicio](https://github.com/facundh/RickandMortyAssembler/assets/90207514/d4dc9cfd-d4e0-4d87-8ab3-f67a76e9ab81)
+![Episode View](https://github.com/facundh/RickandMortyAssembler/assets/90207514/e98ee0af-9f3d-4d46-a5e4-70a60a5c9992)
+![character view](https://github.com/facundh/RickandMortyAssembler/assets/90207514/d797da94-7b38-49d0-a35f-4a8732b07471)
+![location view](https://github.com/facundh/RickandMortyAssembler/assets/90207514/e38ecfb3-e92a-4612-a998-98c2089da80f)
+
  ### Code
  ![Captura de pantalla 2023-05-17 122234](https://github.com/facundh/RickandMortyAssembler/assets/90207514/e232a344-6be9-427e-86e1-5c37b8415b61)
 ![utils](https://github.com/facundh/RickandMortyAssembler/assets/90207514/bd44e435-384c-436c-bd88-85c4cfdf30e8)
