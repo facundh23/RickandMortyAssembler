@@ -95,7 +95,7 @@ const getCharacter = async( url:string):Promise<void>  => {
                 btnInfo.addEventListener("click", ()=> {characterView(`${characterInformation.id}`)})
                 const btnLocation = document.createElement("button");
                 btnLocation.className ="btn btn-info w-100 mt",
-                btnLocation.textContent = "Location Info2";
+                btnLocation.textContent = "Location Info";
                 btnLocation.addEventListener("click", () => {getDataLocation(id)})
                 cardImage.appendChild(imagePhoto);
                 cardImage.appendChild(cardBody);
