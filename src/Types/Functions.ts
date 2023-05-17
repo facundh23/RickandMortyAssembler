@@ -8,6 +8,7 @@ const BASE_URL_EPISODE = "https://rickandmortyapi.com/api/episode";
 
 const container = document.querySelector("#content");
 const cleanScreen = document.querySelector("#cleanData");
+const sideBarView = document.querySelector("#episodesList");
 
 cleanScreen?.addEventListener("click", () => {
     container?.replaceChildren();
@@ -40,6 +41,7 @@ const getDataEpisode = async(id:number):Promise<void>  => {
             }
             container?.replaceChildren()
             const firstTitle = document.createElement("h2");
+           
             firstTitle.className = "title-episode text-center w-100";
             firstTitle.textContent = `Episode: ${informationEpisode.id}`;
             const secondRow = document.createElement("p");
@@ -102,6 +104,7 @@ const getCharacter = async( url:string):Promise<void>  => {
                 cardImage.appendChild(btnInfo);
                 cardImage.appendChild(btnLocation);
                 container?.appendChild(cardImage);
+                
             }
         } catch (error) {
             console.log(error);
