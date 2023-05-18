@@ -17,40 +17,8 @@ body {
 
 .nav_section{
     height: 4rem;
-    background: rgb(15,185,152);
-    background: linear-gradient(90deg, rgba(15,185,152,0.5495448179271709) 0%, rgba(148,233,218,1) 100%);
+  
 }
-
-.toggle{
-    color: black;
-    margin-right: 15px;
-    font-size: 25px;
-    transform: rotate(90deg);
-    cursor: pointer;
-    transition: .3s;
-    display: none;
-}
-
-
-.rotate{
-    transform: rotate(180deg);
-}
-
-.no-show {
-    display:none;
-}
-
-.show{
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,83,1) 47%, rgba(0,212,255,1) 100%);
-    text-align: center;
-    flex-direction: column;
-}
-
 
 .cardImg{
     display: flex;
