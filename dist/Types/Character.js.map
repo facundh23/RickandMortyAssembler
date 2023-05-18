@@ -1,1 +1,1 @@
-{"version":3,"file":"Character.js","sourceRoot":"","sources":["../../src/Types/Character.ts"],"names":[],"mappings":""}
+{"version":3,"file":"Character.js","sourceRoot":"","sources":["../../src/Types/Character.ts"],"names":[],"mappings":"AAAA,IAAK,eAIJ;AAJD,WAAK,eAAe;IAChB,kCAAe,CAAA;IACf,gCAAa,CAAA;IACb,oCAAiB,CAAA;AACrB,CAAC,EAJI,eAAe,KAAf,eAAe,QAInB;AAED,IAAK,eAKJ;AALD,WAAK,eAAe;IAChB,oCAAgB,CAAA;IAChB,gCAAc,CAAA;IACd,4CAAwB,CAAA;IACxB,sCAAmB,CAAA;AACvB,CAAC,EALI,eAAe,KAAf,eAAe,QAKnB"}
