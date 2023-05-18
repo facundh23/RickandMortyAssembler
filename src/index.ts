@@ -19,8 +19,8 @@ let titleContainer = document.createElement("div");
 titleContainer.className = "title_container";
 
 // Controller
-let paginatorController = new IntersectionObserver(( inbounds, paginatorController ) => {
-      //* Si el ultimo elemento esta en pantalla ejecuto el codigo
+let paginatorController = new IntersectionObserver(( inbounds, paginatorController )=> {
+    
     inbounds.forEach(inbound => {
                 if(inbound.isIntersecting){
                     page++
@@ -34,7 +34,7 @@ let paginatorController = new IntersectionObserver(( inbounds, paginatorControll
 
 
 
-const showListEpisodes = async( page:number ) => {
+const showListEpisodes = async( page:number ):Promise<void> => {
 
     if(page < 4){
         const response = await getEpisodesPagination(page)
@@ -58,7 +58,7 @@ const showListEpisodes = async( page:number ) => {
                 sectionInfo?.appendChild(titleContainer)
                 listEpisodes?.appendChild(btnListEpisodes);
 
-                //* Acceder al ultimo elemento en la lista
+                
                 const ListInView = document.querySelectorAll(".episodes .selectedEpisode");
                 let lastEpisode = ListInView[ListInView.length - 1 ]
                 paginatorController.observe(lastEpisode)
