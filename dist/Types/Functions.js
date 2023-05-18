@@ -40,10 +40,11 @@ const getDataEpisode = (id) => __awaiter(void 0, void 0, void 0, function* () {
                 characters: characters,
                 name: name
             };
+            let episodeNum = episode.substring(4, 6);
             container === null || container === void 0 ? void 0 : container.replaceChildren();
             const firstTitle = document.createElement("h2");
             firstTitle.className = "title-episode text-center w-100";
-            firstTitle.textContent = `Episode: ${informationEpisode.id}`;
+            firstTitle.textContent = `Episode: ${episodeNum}`;
             const secondRow = document.createElement("p");
             secondRow.className = "date-info text-center w-100";
             secondRow.textContent = `${informationEpisode.air_date} | ${informationEpisode.episode}`;

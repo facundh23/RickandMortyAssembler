@@ -26,11 +26,12 @@ const getEpisodesPagination = async(page:number) => {
             console.log(error);
         }
     }
+
 const getDataEpisode = async(id:number):Promise<void>  => {
     try {
         const response = await fetch(`${BASE_URL_EPISODE}/${id}`);
         if(response.status === 200){
-            const episodeView = await response.json();
+            const episodeView:Episode = await response.json();
             const {characters, name, id, air_date, episode} = episodeView;
             let informationEpisode: Episode ={
                 id: id,
@@ -39,11 +40,11 @@ const getDataEpisode = async(id:number):Promise<void>  => {
                 characters: characters,
                 name: name
             }
+            let episodeNum = episode.substring(4,6);
             container?.replaceChildren()
             const firstTitle = document.createElement("h2");
-           
             firstTitle.className = "title-episode text-center w-100";
-            firstTitle.textContent = `Episode: ${informationEpisode.id}`;
+            firstTitle.textContent = `Episode: ${episodeNum}`;
             const secondRow = document.createElement("p");
             secondRow.className =  "date-info text-center w-100";
             secondRow.textContent = `${informationEpisode.air_date} | ${informationEpisode.episode}`
@@ -61,18 +62,18 @@ const getCharacter = async( url:string):Promise<void>  => {
         try {
             const response = await fetch(`${url}`);
             if(response.status === 200){
-                const characterInfo = await response.json();
+                const characterInfo= await response.json();
                 const {name, status, species, episode,location,image, id, type,gender,create, origin } = characterInfo
                 let characterInformation: Character = {
                     name:name,
                     status: status,
-                    species:species, 
+                    species:species,
                     episode:episode,
                     location:location,
                     image:image,
                     id:id,
                     gender:gender,
-                    url:url, 
+                    url:url,
                     create:create,
                     type:type, origin
                 }
@@ -104,7 +105,6 @@ const getCharacter = async( url:string):Promise<void>  => {
                 cardImage.appendChild(btnInfo);
                 cardImage.appendChild(btnLocation);
                 container?.appendChild(cardImage);
-                
             }
         } catch (error) {
             console.log(error);
@@ -182,7 +182,6 @@ const getDataLocation = async( id:number):Promise<void> => {
             const response = await fetch(`${BASE_URL_LOCATION}/${id}`);
             if(response.status === 200){
                 const locatioN = await response.json();
-                
                 const { id, name, type, dimension, residents, url, created } = locatioN;
                 let locationInfo:Location = {
                     id: id,
@@ -225,7 +224,6 @@ const getResident = async(url:string):Promise<void> => {
             image:image,
             location: location
         }
-        
         const cardImage = document.createElement("card");
         cardImage.className ="card card-css cardImg";
         cardImage.addEventListener("click", () => {characterView(id)})

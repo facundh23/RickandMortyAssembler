@@ -40,7 +40,7 @@ const showListEpisodes = async( page:number ):Promise<void> => {
         const response = await getEpisodesPagination(page)
         response?.results.forEach((episodeInfo:any) => {
                     const { episode, id, air_date, characters, name } = episodeInfo;
-                    let infoEp: Episode ={
+                    let infoEp: Episode = {
                         id: id,
                         episode: episode,
                         air_date: air_date,
