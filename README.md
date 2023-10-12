@@ -23,6 +23,10 @@
 ![character view](https://github.com/facundh/RickandMortyAssembler/assets/90207514/d797da94-7b38-49d0-a35f-4a8732b07471)
 ![location view](https://github.com/facundh/RickandMortyAssembler/assets/90207514/e38ecfb3-e92a-4612-a998-98c2089da80f)
 
+### Responsive
+![image](https://github.com/facundh23/RickandMortyAssembler/assets/90207514/995c84cd-9743-4019-8261-0337437c442c)
+
+
  ### Code
 ![indexHTML](https://github.com/facundh/RickandMortyAssembler/assets/90207514/a08ee507-a0e4-4f7d-8fdb-7644406282e3)
 ![utils](https://github.com/facundh/RickandMortyAssembler/assets/90207514/ec98dfe7-46c2-40cb-ac7b-35b79b6316c5)
